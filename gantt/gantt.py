@@ -2264,10 +2264,11 @@ class Project(object):
             csv_text = ''
 
         for t in self.tasks:
-            if type(t)=="Project":
-                proj=''
-            else:
+
+            if isinstance(t, Task) or isinstance(t,Milestone):
                 proj='"'+self.name + '";'
+            else:
+                proj = ''
 
             c = t.csv()
             if c is not None:
