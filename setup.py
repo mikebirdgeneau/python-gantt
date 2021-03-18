@@ -43,14 +43,16 @@ setup (
     long_description=long_description,
     install_requires=[
         'argparse>=1.4.0',
-        'attrs>=19.3.0',
-        'svgwrite>=1.1.6',
         'clize>=2.0',
         'dateutils==0.6.12',
+        'funcsigs>=1.0.2',
+        'pyparsing>=2.4.7',
         'python-dateutil>=2.4',
         'pytz==2021.1',
+        'sigtools==2.0.2',
         'od>=1.0',
-        ],
+        'svgwrite>=1.4.1',
+    ],
     zip_safe = True, 
     )
 
