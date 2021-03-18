@@ -15,7 +15,7 @@ ifneq ($(shell python setup.py --version 2> /dev/null), $(shell python -c 'impor
 	$(error VERSION INCONSISTENCY between setup.py and gantt/gantt.py)
 endif
 
-archive: doc readme changelog
+archive: readme changelog
 	@$(PYTHON) setup.py sdist
 	@echo Archive is create and named dist/$(ARCHIVE).tar.gz
 	@echo -n md5sum is :
