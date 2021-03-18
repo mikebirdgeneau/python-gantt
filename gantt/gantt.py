@@ -2264,6 +2264,11 @@ class Project(object):
             csv_text = ''
 
         for t in self.tasks:
+            if type(t)=="Project":
+                proj=''
+            else:
+                proj='"'+self.name + '";'
+
             c = t.csv()
             if c is not None:
                 if sys.version_info[0] == 2:
@@ -2271,11 +2276,11 @@ class Project(object):
                         c = unicode(c, "utf-8")
                     except TypeError:
                         pass
-                    csv_text += '"'+self.name + '";'+ c
+                    csv_text += proj + c
                 elif sys.version_info[0] == 3:
-                    csv_text += '"'+self.name + '";'+ c
+                    csv_text += proj + c
                 else:
-                    csv_text += '"'+self.name + '";'+ c
+                    csv_text += proj + c
 
 
         if csv is not None:
