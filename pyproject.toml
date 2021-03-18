@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "python-gantt"
+version = "0.6.0.1"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = "GPLv3"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+argparse = "^1.4.0"
+clize = "^4.1.1"
+dateutils = "^0.6.12"
+funcsigs = "^1.0.2"
+pyparsing = "^2.4.7"
+python-dateutil = "^2.8.1"
+pytz = "^2021.1"
+sigtools = "^2.0.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
