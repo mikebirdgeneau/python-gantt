@@ -1596,8 +1596,11 @@ class Milestone(Task):
         Keyword arguments:
         csv -- None, dymmy object
         """
-        if self.resources is not None:
-            resources = ', '.join([x.fullname for x in self.resources])
+        if hasattr(self,'resources'):
+            if self.resources is not None:
+                resources = ', '.join([x.fullname for x in self.resources])
+            else:
+                resources = ''
         else:
             resources = ''
             
