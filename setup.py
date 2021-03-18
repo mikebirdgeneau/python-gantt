@@ -44,7 +44,9 @@ setup (
     install_requires=[
         'svgwrite>=1.1.6',
         'clize>=2.0',
-        'python-dateutil>=2.4'
+        'dateutils==0.6.12',
+        'python-dateutil>=2.4',
+        'pytz==2021.1',
         ],
     zip_safe = True, 
     )
