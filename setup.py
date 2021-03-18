@@ -42,11 +42,14 @@ setup (
     description = 'This is a python class to create gantt chart using SVG.',
     long_description=long_description,
     install_requires=[
+        'argparse>=1.4.0',
+        'attrs>=19.3.0',
         'svgwrite>=1.1.6',
         'clize>=2.0',
         'dateutils==0.6.12',
         'python-dateutil>=2.4',
         'pytz==2021.1',
+        'od>=1.0',
         ],
     zip_safe = True, 
     )
