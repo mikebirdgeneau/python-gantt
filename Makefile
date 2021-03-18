@@ -2,7 +2,7 @@
 
 VERSION=$(shell $(PYTHON) setup.py --version)
 ARCHIVE=$(shell $(PYTHON) setup.py --fullname)
-PYTHON=python3.4
+PYTHON=python3
 PANDOC=~/.cabal/bin/pandoc
 
 install:

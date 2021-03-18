@@ -4,7 +4,9 @@ Makefile
 README.md
 README.txt
 gpl-3.0.txt
+pyproject.toml
 requirements.txt
+setup.cfg
 setup.py
 gantt/__init__.py
 gantt/gantt.py
