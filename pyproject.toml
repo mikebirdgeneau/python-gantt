@@ -15,9 +15,10 @@ pyparsing = "^2.4.7"
 python-dateutil = ">=2.4"
 pytz = "^2021.1"
 sigtools = "^2.0.2"
-svgwrite = ">=1.1.6"
+svgwrite = "^1.4.1"
 
 [tool.poetry.dev-dependencies]
+tox = "^3.23.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

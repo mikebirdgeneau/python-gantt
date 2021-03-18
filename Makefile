@@ -53,29 +53,5 @@ conformity:
 	flake8 org2gantt/org2gantt.py
 	flake8 gantt/gantt.py
 
+release: check_version_consistency tox doc changelog
 
-pipregister:
-	$(PYTHON) setup.py register
-
-register:
-	$(PYTHON) setup.py sdist upload --identity="Alexandre Norman" --sign --quiet
-
-doc:
-	@pydoc -w gantt/gantt.py
-
-web:
-	@cp dist/$(ARCHIVE).tar.gz web2/
-	@m4 -DVERSION=$(VERSION) -DMD5SUM=$(shell md5sum dist/$(ARCHIVE).tar.gz |cut -d' ' -f1) -DDATE=$(shell date +%Y-%m-%d) web2/index.md.m4 > web2/index.md
-	@m4 -DVERSION=$(VERSION) -DMD5SUM=$(shell md5sum dist/$(ARCHIVE).tar.gz |cut -d' ' -f1) -DDATE=$(shell date +%Y-%m-%d) web2/index-en.md.m4 > web2/index-en.md
-	@bash -c 'source /usr/local/bin/virtualenvwrapper.sh; workon xael.org; make ftp_upload'
-
-hgcommit:
-	hg commit || true
-	hg tag $(VERSION) -f
-	hg push
-
-
-release: check_version_consistency tox doc changelog hgcommit register web
-
-
-.PHONY: web
