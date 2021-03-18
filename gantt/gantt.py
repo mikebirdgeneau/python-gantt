@@ -1594,7 +1594,7 @@ class Milestone(Task):
         Create CSV output from milestones
 
         Keyword arguments:
-        csv -- None, dymmy object
+        csv -- None, dummy object
         """
         if hasattr(self,'resources'):
             if self.resources is not None:
@@ -2259,7 +2259,7 @@ class Project(object):
 
         if csv is not None:
             csv_text = bytes.decode(codecs.BOM_UTF8, 'utf-8')
-            csv_text += '"State";"Task Name";"Start date";"End date";"Duration";"Resources";\r\n'
+            csv_text += '"Project";"State";"Task Name";"Start date";"End date";"Duration";"Resources";\r\n'
         else:
             csv_text = ''
 
@@ -2271,11 +2271,11 @@ class Project(object):
                         c = unicode(c, "utf-8")
                     except TypeError:
                         pass
-                    csv_text += c
+                    csv_text += '"'+self.name + '";'+ c
                 elif sys.version_info[0] == 3:
-                    csv_text += c
+                    csv_text += '"'+self.name + '";'+ c
                 else:
-                    csv_text += c
+                    csv_text += '"'+self.name + '";'+ c
 
 
         if csv is not None:
